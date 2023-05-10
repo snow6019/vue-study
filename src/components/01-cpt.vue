@@ -12,7 +12,7 @@
 
 <script>
 export default {
-    name: "LxCpt04"
+    name: "LxCpt01"
 }
 </script>
 
