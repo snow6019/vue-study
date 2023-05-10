@@ -11,7 +11,7 @@
 
     <!-- 列表： -->
     <section class="main">
-      <input id="toggle-all" class="toggle-all" type="checkbox">
+      <input id="toggle-all" class="toggle-all" type="checkbox" v-model="isAll">
       <label for="toggle-all">Mark all as complete</label>
       <ul class="todo-list">
           
@@ -23,7 +23,7 @@
 
     <!-- 底部：状态栏 -->
     <footer class="footer">
-      <span class="todo-count">剩余<strong>0</strong>未完成 </span>
+      <span class="todo-count">剩余<strong>{{nodo}}</strong>未完成 </span>
       <ul class="filters">
         <li>
           <a class="selected" href="#/">全部</a>
@@ -35,7 +35,7 @@
           <a href="#/completed">已完成</a>
         </li>
       </ul>
-      <button class="clear-completed">清除已完成</button>
+      <button class="clear-completed" @click="clearDone">清除已完成</button>
     </footer>
 
 
@@ -49,11 +49,7 @@ export default {
   data () {
     return {
       name: "",
-      list: [
-        { id: 1, name: '吃饭', isDone: true },
-        { id: 2, name: '睡觉', isDone: false },
-        { id: 3, name: '打豆豆', isDone: true }
-      ]
+      list: JSON.parse(localStorage.getItem("todos")) || []
     }
   },
   components:{
@@ -70,6 +66,37 @@ export default {
       }
       this.list.push({id: Math.random(), name: this.name, isDone: false})
       this.name=""
+    },
+    clearDone(){
+      this.list.forEach(x=>{
+        if(x.isDone) {
+          let i = this.list.findIndex(e=>e.id == x.id)
+          this.list.splice(i,1)
+        }
+      })
+    }
+  },
+  computed:{
+    nodo(){
+      let num = 0
+      this.list.forEach(x=> x.isDone ? num+=0 : num+=1)
+      return num
+    },
+    isAll:{
+      set(b){
+        this.list.forEach(x=>x.isDone=b)
+      },
+      get(){
+        return this.list.every(e=>e.isDone==true)
+      }
+    }
+  },
+  watch:{
+    list:{
+      deep: true,
+      handler(){
+        localStorage.setItem("todos",JSON.stringify(this.list))
+      }
     }
   }
 }
