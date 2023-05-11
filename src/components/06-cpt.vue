@@ -1,5 +1,6 @@
 <template>
   <div>
+    <h4 v-red>$nextTick</h4>
     <p ref="p">{{num}}</p>
     <button @click="fn">+1</button>
     <hr/>

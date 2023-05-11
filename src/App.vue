@@ -8,7 +8,14 @@
     <!-- <button @click="get">获取</button> -->
     <!-- <cpt-6/> -->
     <!-- <cpt-7/> -->
-    <cpt-7dynamic/>
+    <!-- <cpt-7dynamic/> -->
+    <h3 v-red>测试</h3>
+    <cpt-8/>
+    <h3 v-blue>测试222</h3>
+    <h3 v-color="'pink'">测试223</h3>
+    <hr/>
+    <!-- <h4 v-dance="300">测试1：疯狂跳舞</h4>
+    <h4 v-dance="50">测试2：疯狂跳舞</h4> -->
   </div>
 </template>
 
@@ -21,6 +28,7 @@ import cpt5 from "./components/05-cpt.vue"
 import cpt6 from "./components/06-cpt.vue"
 import cpt7 from "./components/07-cpt.vue"
 import cpt7dynamic from "./components/07-cpt-dynamic.vue"
+import cpt8 from "./components/08-cpt.vue"
 export default {
   data(){
     return{
@@ -37,6 +45,7 @@ export default {
     cpt6,
     cpt7,
     cpt7dynamic,
+    cpt8,
   },
   methods:{
     fn(a){
