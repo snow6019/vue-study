@@ -6,7 +6,9 @@
     <!-- <cpt-4/> -->
     <!-- <cpt-5 ref="aaa"/> -->
     <!-- <button @click="get">获取</button> -->
-    <cpt-6/>
+    <!-- <cpt-6/> -->
+    <!-- <cpt-7/> -->
+    <cpt-7dynamic/>
   </div>
 </template>
 
@@ -17,6 +19,8 @@ import cpt3 from "./components/03-cpt.vue"
 import cpt4 from "./components/04-cpt.vue"
 import cpt5 from "./components/05-cpt.vue"
 import cpt6 from "./components/06-cpt.vue"
+import cpt7 from "./components/07-cpt.vue"
+import cpt7dynamic from "./components/07-cpt-dynamic.vue"
 export default {
   data(){
     return{
@@ -31,6 +35,8 @@ export default {
     cpt4,
     cpt5,
     cpt6,
+    cpt7,
+    cpt7dynamic,
   },
   methods:{
     fn(a){
