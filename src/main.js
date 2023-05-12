@@ -17,15 +17,35 @@ Vue.directive("color",{
 })
 
 // 疯狂跳舞
-Vue.directive("dance",{
-  inserted(el,binding){
-    setInterval(() => {
-      let a = Math.floor(Math.random()*256)
-      let b = Math.floor(Math.random()* 56)
-      let c = Math.floor(Math.random()*256)
-      el.style.backgroundColor = `rgb(${a},${b},${c})`
-    }, binding.value);
-  }
+let time1 = null
+// Vue.directive("dance",{
+//   inserted(el,binding){
+//     time1 = setInterval(() => {
+//       let a = Math.floor(Math.random()*256)
+//       let b = Math.floor(Math.random()* 56)
+//       let c = Math.floor(Math.random()*256)
+//       el.style.backgroundColor = `rgb(${a},${b},${c})`
+//     }, binding.value);
+//   },
+//   update(el,binding) {
+//     clearInterval(time1)
+//     console.log("updated===>"+binding.value)
+//     time1 = setInterval(() => {
+//       let a = Math.floor(Math.random()*256)
+//       let b = Math.floor(Math.random()* 56)
+//       let c = Math.floor(Math.random()*256)
+//       el.style.backgroundColor = `rgb(${a},${b},${c})`
+//     }, binding.value);
+//   }
+// })
+Vue.directive("dance",function(el,binding){
+  clearInterval(time1)
+  time1 = setInterval(() => {
+    let a = Math.floor(Math.random() * 256)
+    let b = Math.floor(Math.random() * 56)
+    let c = Math.floor(Math.random() * 256)
+    el.style.backgroundColor = `rgb(${a},${b},${c})`
+  }, binding.value);
 })
 new Vue({
   render: h => h(App),

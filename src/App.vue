@@ -9,13 +9,14 @@
     <!-- <cpt-6/> -->
     <!-- <cpt-7/> -->
     <!-- <cpt-7dynamic/> -->
-    <h3 v-red>测试</h3>
+    <!-- <h3 v-red>测试</h3>
     <cpt-8/>
     <h3 v-blue>测试222</h3>
-    <h3 v-color="'pink'">测试223</h3>
+    <h3 v-color="'pink'">测试223</h3> -->
     <hr/>
-    <!-- <h4 v-dance="300">测试1：疯狂跳舞</h4>
-    <h4 v-dance="50">测试2：疯狂跳舞</h4> -->
+    <h4 v-dance="time">测试1：疯狂跳舞</h4>
+    <button @click="time=50000">慢下来</button>
+    <button @click="time=50">快起来</button>
   </div>
 </template>
 
@@ -34,6 +35,7 @@ export default {
     return{
       num: 100,
       num2: 100,
+      time: 500
     }
   },
   components:{
