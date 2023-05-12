@@ -14,9 +14,20 @@
     <h3 v-blue>测试222</h3>
     <h3 v-color="'pink'">测试223</h3> -->
     <hr/>
-    <h4 v-dance="time">测试1：疯狂跳舞</h4>
+    <!-- <h4 v-dance="time">测试1：疯狂跳舞</h4>
     <button @click="time=50000">慢下来</button>
-    <button @click="time=50">快起来</button>
+    <button @click="time=50">快起来</button> -->
+    <cpt-9>
+      <ul>
+        <li>xxxxxxxxxxxxxx</li>
+        <li>xxxxxxxxxxxxxx</li>
+        <li>xxxxxxxxxxxxxx</li>
+        <li>xxxxxxxxxxxxxx</li>
+      </ul>
+    </cpt-9>
+    <cpt-9>
+      <img src="./assets/logo.png" alt="dfasfdsa">
+    </cpt-9>
   </div>
 </template>
 
@@ -30,6 +41,7 @@ import cpt6 from "./components/06-cpt.vue"
 import cpt7 from "./components/07-cpt.vue"
 import cpt7dynamic from "./components/07-cpt-dynamic.vue"
 import cpt8 from "./components/08-cpt.vue"
+import cpt9 from "./components/09-cpt.vue"
 export default {
   data(){
     return{
@@ -48,6 +60,7 @@ export default {
     cpt7,
     cpt7dynamic,
     cpt8,
+    cpt9,
   },
   methods:{
     fn(a){
