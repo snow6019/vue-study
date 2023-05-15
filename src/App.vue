@@ -26,11 +26,19 @@
       {{getSon}}
       <img :src="getSon.bbb" alt="123">
     </cpt-3> -->
-    <cpt-4 v-slot="aaa">
+    <!-- <cpt-4 v-slot="aaa">
       <h4>{{aaa.obj.name}}</h4>
       <h4>{{aaa.obj.age}}</h4>
       <h4>{{aaa.obj.sex}}</h4>
-    </cpt-4>
+    </cpt-4> -->
+    <cpt-5>
+      <template v-slot:t="scope">
+        <h4>{{scope.row.title}}</h4>
+      </template>
+      <template v-slot:c="scope">
+        <h5>{{scope.row.content}}</h5>
+      </template>
+    </cpt-5>
   </div>
 </template>
 
@@ -39,12 +47,14 @@ import cpt1 from "./components/01-cpt.vue"
 import cpt2 from "./components/02-cpt.vue"
 import cpt3 from "./components/03-cpt.vue"
 import cpt4 from "./components/04-cpt.vue"
+import cpt5 from "./components/05-cpt.vue"
 export default {
   components:{
     cpt1,
     cpt2,
     cpt3,
     cpt4,
+    cpt5,
   }
 }
 </script>
