@@ -1,64 +1,76 @@
 <template>
-  <div>
-    <!-- <cpt-1></cpt-1> -->
-    <!-- <cpt-2>
-      <template v-slot:title>
-        <h4>打开房间啊数据库</h4>
-      </template>
-      <template v-slot:content>
-        <ul>
-          <li>fdsfasdfsaf</li>
-          <li>fdsfasdfsaf</li>
-          <li>fdsfasdfsaf</li>
-          <li>fdsfasdfsaf</li>
-        </ul>
-      </template>
-    </cpt-2>
-    <cpt-2>
-      <template #title>
-        <h4>图片图片图片</h4>
-      </template>
-      <template #content>
-        <img src="./assets/logo.png" alt="123">
-      </template>
-    </cpt-2>
-    <cpt-3 v-slot="getSon">
-      {{getSon}}
-      <img :src="getSon.bbb" alt="123">
-    </cpt-3> -->
-    <!-- <cpt-4 v-slot="aaa">
-      <h4>{{aaa.obj.name}}</h4>
-      <h4>{{aaa.obj.age}}</h4>
-      <h4>{{aaa.obj.sex}}</h4>
-    </cpt-4> -->
-    <cpt-5>
-      <template v-slot:t="scope">
-        <h4>{{scope.row.title}}</h4>
-      </template>
-      <template v-slot:c="scope">
-        <h5>{{scope.row.content}}</h5>
-      </template>
-    </cpt-5>
-  </div>
+  <table class="my-table">
+    <thead>
+      <tr>
+        <th>编号</th>
+        <th>图片</th>
+        <th>名称</th>
+        <th width="100px">标签</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>101</td>
+        <td><img src="https://yanxuan-item.nosdn.127.net/f8c37ffa41ab1eb84bff499e1f6acfc7.jpg" /></td>
+        <td>梨皮朱泥三绝清代小品壶经典款紫砂壶</td>
+        <td>
+          <!-- <my-tag :info="msg" @aaa="fn"></my-tag> -->
+          <my-tag v-model="msg"></my-tag>
+        </td>
+      </tr>
+    </tbody>
+  </table>
 </template>
 
 <script>
-import cpt1 from "./components/01-cpt.vue"
-import cpt2 from "./components/02-cpt.vue"
-import cpt3 from "./components/03-cpt.vue"
-import cpt4 from "./components/04-cpt.vue"
-import cpt5 from "./components/05-cpt.vue"
+import MyTag from "./components/MyTag.vue"
 export default {
   components:{
-    cpt1,
-    cpt2,
-    cpt3,
-    cpt4,
-    cpt5,
+    MyTag
+  },
+  data() {
+    return{
+      msg:"茶叶"
+    }
+  },
+  methods:{
+    fn(val){
+      this.msg = val
+    }
   }
 }
 </script>
 
-<style>
-
+<style lang="less" scoped>
+.my-table {
+  width: 100%;
+  border-spacing: 0;
+  img {
+    width: 100px;
+    height: 100px;
+    object-fit: contain;
+    vertical-align: middle;
+  }
+  th {
+    background: #f5f5f5;
+    border-bottom: 2px solid #069;
+  }
+  td {
+    border-bottom: 1px dashed #ccc;
+  }
+  td,
+  th {
+    text-align: center;
+    padding: 10px;
+    transition: all .5s;
+    &.red {
+      color: red;
+    }
+  }
+  .none {
+    height: 100px;
+    line-height: 100px;
+    color: #999;
+  }
+}
 </style>
