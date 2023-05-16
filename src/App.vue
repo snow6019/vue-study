@@ -1,9 +1,15 @@
 <template>
   <div>
-    <div class="footer_wrap">
-      <a href="#/find">发现音乐</a>
+   <div class="footer_wrap">
+      <!-- <a href="#/find">发现音乐</a>
       <a href="#/my">我的音乐</a>
-      <a href="#/friend">朋友</a>
+      <a href="#/friend">朋友</a> -->
+      <router-link to="/find">发现音乐</router-link>
+      <router-link to="/my">我的音乐</router-link>
+      <!-- <router-link to="/friend">朋友</router-link> -->
+      <router-link to="/friend?name=小传">朋友-小传</router-link>
+      <router-link to="/friend?name=小智">朋友-小智</router-link>
+      <router-link to="/friend/小明">朋友-小明</router-link>
     </div>
     <div class="top">
       <router-view></router-view>
@@ -40,5 +46,9 @@ export default {};
 }
 .top {
   padding-top: 62px;
+}
+
+.router-link-active{
+  background-color: blue !important;;
 }
 </style>

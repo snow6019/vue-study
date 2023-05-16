@@ -8,6 +8,10 @@ import Friend from '@/views/Friend'
 const router = new VueRouter({
   routes: [
     {
+      path: '/',
+      redirect: "/find",
+    },
+    {
       path: '/find',
       component: Find,
     },
@@ -17,6 +21,10 @@ const router = new VueRouter({
     },
     {
       path: '/friend',
+      component: Friend,
+    },
+    {
+      path: '/friend/:name',
       component: Friend,
     },
   ],
