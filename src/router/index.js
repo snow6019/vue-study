@@ -5,6 +5,7 @@ Vue.use(VueRouter)
 import Find from '@/views/Find'
 import My from '@/views/My'
 import Friend from '@/views/Friend'
+import Page404 from '@/views/404'
 const router = new VueRouter({
   routes: [
     {
@@ -27,6 +28,11 @@ const router = new VueRouter({
       path: '/friend/:name',
       component: Friend,
     },
+    {
+      path: '*',
+      component: Page404,
+    },
   ],
+  mode:"history"
 })
 export default router
