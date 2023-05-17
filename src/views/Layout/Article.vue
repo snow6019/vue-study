@@ -1,7 +1,6 @@
 <template>
   <div class="article-page">
 
-
     <div class="article-item" v-for="item in list" :key="item.id" @click="go(item.id)">
       <div class="head">
         <img :src="item.creatorAvatar" alt="" />
@@ -13,10 +12,7 @@
       <div class="body">{{item.content}}</div>
       <div class="foot">点赞 {{ item.likeCount }} | 浏览 {{ item.views }}</div>
     </div>
-
     
-
-
   </div>
 </template>
 
@@ -36,6 +32,7 @@ export default {
   async created(){
     // npm i axios;
     // async await：用同步代码方式 写异步！没有出现回调函数
+    console.log(111111)
     let {data} =  await axios({url:"https://mock.boxuegu.com/mock/3083/articles"})
     this.list = data.result.rows;
   },

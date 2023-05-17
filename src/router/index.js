@@ -7,6 +7,7 @@ import Article from "@/views/Layout/Article"
 import Collect from "@/views/Layout/Collect"
 import Like from "@/views/Layout/Like"
 import User from "@/views/Layout/User"
+import ArticleDetail from "@/views/ArticleDetail"
 const router = new VueRouter({
   routes: [
     {
@@ -31,6 +32,11 @@ const router = new VueRouter({
         },
       ]
     },
+    {
+      name:'detail',
+      path:'/detail/:id',
+      component: ArticleDetail
+    }
   ],
   // mode:"history"
 })
