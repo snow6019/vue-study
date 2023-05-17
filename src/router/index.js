@@ -13,18 +13,22 @@ const router = new VueRouter({
       redirect: "/find",
     },
     {
+      name: 'a',
       path: '/find',
       component: Find,
     },
     {
+      name: 'b',
       path: '/my',
       component: My,
     },
     {
+      name: 'c',
       path: '/friend',
       component: Friend,
     },
     {
+      name: 'd',
       path: '/friend/:name',
       component: Friend,
     },
@@ -33,6 +37,6 @@ const router = new VueRouter({
       component: Page404,
     },
   ],
-  mode:"history"
+  // mode:"history"
 })
 export default router
