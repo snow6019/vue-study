@@ -9,7 +9,8 @@ const store = new Vuex.Store({
     state: {
        // 变量名: 初始值
        count:100,
-       num:200
+       num:200,
+       price: 66
     },
     mutations:{
         add(state,value){
@@ -20,6 +21,18 @@ const store = new Vuex.Store({
         },
         reset(state,value){
             state.count=value
+        }
+    },
+    actions:{
+        getServer(store,value){
+            setTimeout(() => {
+                store.commit('reset',8888)
+            }, 1000);
+        }
+    },
+    getters:{
+        all(state){
+            return state.count * state.price * 0.85
         }
     }
 })
