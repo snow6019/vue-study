@@ -1,9 +1,9 @@
 <template>
   <div>
       <h3>SubItem组件</h3>
-      <p>已知库存数1: {{hm_count}}</p>
-      <p>已知库存数2: {{hm_num}}</p>
-      <button @click="sub(8)">库存-1</button>
+      <p>已知库存数1: {{count}}</p>
+      <p>已知库存数2: {{num}}</p>
+      <button @click="hm_sub(8)">库存-1</button>
   </div>
 </template>
 
@@ -11,10 +11,11 @@
 import {mapMutations, mapState} from 'vuex'
 export default {
     computed:{
-        // ...mapState(['count','num'])
+        ...mapState(['count','num'])
     },
     methods:{
-        ...mapMutations(['sub']),
+        // ...mapMutations(['sub']),
+        ...mapMutations({hm_sub:'sub'}),
     }
 }
 </script>
