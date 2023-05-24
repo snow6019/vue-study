@@ -10,6 +10,17 @@ const store = new Vuex.Store({
        // 变量名: 初始值
        count:100,
        num:200
+    },
+    mutations:{
+        add(state,value){
+            state.count+=value
+        },
+        sub(state,value){
+            state.count-=value
+        },
+        reset(state,value){
+            state.count=value
+        }
     }
 })
 
