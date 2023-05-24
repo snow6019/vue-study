@@ -13,7 +13,7 @@
     <div style="border:1px solid black; width: 300px;">
       <SubItem></SubItem>
     </div>
-    <h3>总价1:{{this.$store.getters['goods/all']}}</h3>
+    <h3>总价1:{{this.$store.getters.all}}</h3>
     <h3>总价2:{{hm_all}}</h3>
     <h3>总价3:{{all}}</h3>
     <h3>总价4:{{sn_all}}</h3>
@@ -33,24 +33,24 @@ export default {
     // ...mapState(['count']) 
     count:{
       get(){
-        return this.$store.state.goods.count
+        return this.$store.state.count
       },
       set(val){
-        this.$store.commit('goods/reset',val)
+        this.$store.commit('reset',val)
       }
     },
     hm_all(){
-      return this.$store.getters['goods/all']
+      return this.$store.getters.all
     },
-    ...mapGetters('goods',['all']),
-    ...mapGetters('goods',{sn_all:'all'})
+    ...mapGetters(['all']),
+    ...mapGetters({sn_all:'all'})
   },
   methods:{
     getServerData(){
-      this.$store.dispatch('goods/getServer')
+      this.$store.dispatch('getServer')
     },
-    ...mapActions('goods',['getServer']),
-    ...mapActions('goods',{hm_server:'getServer'})
+    ...mapActions(['getServer']),
+    ...mapActions({hm_server:'getServer'})
   }
 }
 </script>

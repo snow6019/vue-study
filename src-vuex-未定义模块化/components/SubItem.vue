@@ -11,11 +11,11 @@
 import {mapMutations, mapState} from 'vuex'
 export default {
     computed:{
-        ...mapState('goods',['count','num'])
+        ...mapState(['count','num'])
     },
     methods:{
         // ...mapMutations(['sub']),
-        ...mapMutations('goods',{hm_sub:'sub'}),
+        ...mapMutations({hm_sub:'sub'}),
     }
 }
 </script>
