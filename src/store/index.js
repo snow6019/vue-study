@@ -9,6 +9,7 @@ const store = new Vuex.Store({
     state: {
        // 变量名: 初始值
        count:100,
+       num:200
     }
 })
 

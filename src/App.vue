@@ -2,7 +2,7 @@
   <div id="app">
     <h1>根组件</h1>
     <span>库存总数:</span>
-    <input type="text">
+    <input type="text" v-model="count">
     <div style="border:1px solid black; width: 300px;">
       <AddItem></AddItem>
     </div>
@@ -16,10 +16,14 @@
 <script>
 import AddItem from '@/components/AddItem'
 import SubItem from '@/components/SubItem'
+import { mapState } from 'vuex'
 export default {
   components: {
     AddItem,
     SubItem
+  },
+  computed:{
+    ...mapState(['count'])
   }
 }
 </script>
